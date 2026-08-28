@@ -1,0 +1,2009 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   PAGE 1
+========================= */
+
+.home-page {
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("images/background1.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* Background overlay */
+
+.overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(2px);
+}
+
+/* Main container */
+
+.home-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+    max-width: 600px;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+/* =========================
+   CIRCULAR VIDEO
+========================= */
+
+.video-circle {
+
+    width: 230px;
+    height: 230px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 8px solid white;
+
+    box-shadow:
+        0 0 20px rgba(255, 105, 180, 0.7),
+        0 0 50px rgba(255, 105, 180, 0.4);
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+.video-circle video {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* Floating animation */
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.home-container h1 {
+
+    margin-top: 30px;
+
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    color: #ff1493;
+
+    text-shadow:
+        2px 2px 5px rgba(255,255,255,0.8);
+
+}
+
+/* =========================
+   PASSWORD BOX
+========================= */
+
+.password-box {
+
+    margin-top: 35px;
+
+    background: rgba(255,255,255,0.75);
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.password-box p {
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    color: #c2185b;
+
+    margin-bottom: 15px;
+}
+
+/* Input */
+
+.password-box input {
+
+    width: 80%;
+
+    padding: 14px 20px;
+
+    border-radius: 30px;
+
+    border: 2px solid #ff69b4;
+
+    outline: none;
+
+    font-size: 17px;
+
+    text-align: center;
+
+    background: white;
+}
+
+.password-box input:focus {
+
+    box-shadow:
+        0 0 15px rgba(255,105,180,0.5);
+}
+
+/* Button */
+
+.password-box button {
+
+    display: block;
+
+    margin: 18px auto 0;
+
+    padding: 14px 30px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #ff1493;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.password-box button:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 8px 20px rgba(255,20,147,0.4);
+}
+
+/* Error */
+
+#errorMessage {
+
+    margin-top: 12px;
+
+    color: #e53935;
+
+    font-size: 15px;
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .video-circle {
+
+        width: 180px;
+        height: 180px;
+    }
+
+    .home-container h1 {
+
+        font-size: 30px;
+    }
+
+    .password-box input {
+
+        width: 100%;
+    }
+}
+/* =====================================================
+   PAGE 2 — RAKHI SURPRISE
+===================================================== */
+
+.surprise-page {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(255, 228, 240, 0.55),
+            rgba(255, 245, 220, 0.65)
+        ),
+        url("images/background2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.surprise-container {
+
+    width: 92%;
+    max-width: 850px;
+
+    min-height: 100vh;
+
+    padding:
+        60px
+        20px
+        80px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =====================================================
+   RAKHI AREA
+===================================================== */
+
+.rakhi-wrapper {
+
+    width: 350px;
+    height: 350px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: rakhiEntrance 2.5s ease-out forwards;
+}
+
+
+/* Golden glow behind Rakhi */
+
+.golden-glow {
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 215, 80, 0.75) 0%,
+            rgba(255, 174, 0, 0.35) 35%,
+            rgba(255, 255, 255, 0) 72%
+        );
+
+    filter: blur(8px);
+
+    animation:
+        goldenPulse 2.5s ease-in-out infinite;
+}
+
+
+/* Rakhi image */
+
+.rakhi-image {
+
+    width: 280px;
+    height: 280px;
+
+    object-fit: contain;
+
+    position: relative;
+    z-index: 2;
+
+    filter:
+        drop-shadow(0 10px 15px rgba(0,0,0,0.20))
+        drop-shadow(0 0 15px rgba(255, 196, 0, 0.5));
+
+    animation: rakhiFloat 3s ease-in-out 2.5s infinite;
+}
+
+
+/* =====================================================
+   RAKHI ENTRANCE
+===================================================== */
+
+@keyframes rakhiEntrance {
+
+    0% {
+
+        transform:
+            scale(0.15)
+            rotate(-12deg);
+
+        opacity: 0;
+    }
+
+    45% {
+
+        transform:
+            scale(1.35)
+            rotate(8deg);
+
+        opacity: 1;
+    }
+
+    70% {
+
+        transform:
+            scale(0.9)
+            rotate(-4deg);
+    }
+
+    100% {
+
+        transform:
+            scale(1)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+}
+
+
+/* Floating */
+
+@keyframes rakhiFloat {
+
+    0%, 100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px)
+            rotate(2deg);
+    }
+}
+
+
+/* Golden pulse */
+
+@keyframes goldenPulse {
+
+    0%, 100% {
+
+        transform: scale(0.9);
+
+        opacity: 0.65;
+    }
+
+    50% {
+
+        transform: scale(1.15);
+
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.rakhi-message {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 35px 30px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    backdrop-filter: blur(12px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 15px 40px rgba(190, 70, 120, 0.15);
+
+    animation:
+        messageAppear 1.5s ease-out 1.5s both;
+}
+
+
+/* Small heading */
+
+.small-heading {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: #d81b60;
+
+    margin-bottom: 8px;
+
+    letter-spacing: 1px;
+}
+
+
+/* Main heading */
+
+.rakhi-message h1 {
+
+    font-size: 42px;
+
+    color: #e91e63;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        1px 2px 4px rgba(255,255,255,0.9);
+}
+
+
+/* Paragraphs */
+
+.message-text {
+
+    max-width: 650px;
+
+    margin: 0 auto 16px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #633b4c;
+}
+
+
+/* Love line */
+
+.love-line {
+
+    margin-top: 25px;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    color: #ff1493;
+}
+
+
+/* Message animation */
+
+@keyframes messageAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   MEMORIES BUTTON
+===================================================== */
+
+.memories-button {
+
+    margin-top: 35px;
+
+    padding:
+        16px
+        35px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1493,
+            #ff69b4
+        );
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(255, 20, 147, 0.35);
+
+    animation:
+        buttonAppear 1.2s ease-out 3s both;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+
+.memories-button:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 14px 35px rgba(255, 20, 147, 0.45);
+}
+
+
+@keyframes buttonAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.8);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.heart {
+
+    position: fixed;
+
+    z-index: 2;
+
+    font-size: 30px;
+
+    opacity: 0.7;
+
+    pointer-events: none;
+
+    animation:
+        floatingHeart 5s ease-in-out infinite;
+}
+
+
+.heart1 {
+
+    left: 8%;
+    top: 20%;
+
+    animation-delay: 0s;
+}
+
+
+.heart2 {
+
+    right: 8%;
+    top: 30%;
+
+    animation-delay: 1s;
+}
+
+
+.heart3 {
+
+    left: 15%;
+    bottom: 15%;
+
+    animation-delay: 2s;
+}
+
+
+.heart4 {
+
+    right: 15%;
+    bottom: 20%;
+
+    animation-delay: 3s;
+}
+
+
+@keyframes floatingHeart {
+
+    0% {
+
+        transform:
+            translateY(20px)
+            rotate(0deg);
+
+        opacity: 0.2;
+    }
+
+    50% {
+
+        transform:
+            translateY(-25px)
+            rotate(10deg);
+
+        opacity: 0.8;
+    }
+
+    100% {
+
+        transform:
+            translateY(20px)
+            rotate(0deg);
+
+        opacity: 0.2;
+    }
+}
+
+
+
+
+@media (max-width: 600px) {
+
+    .surprise-container {
+
+        padding-top: 35px;
+    }
+
+    .rakhi-wrapper {
+
+        width: 270px;
+        height: 270px;
+    }
+
+    .rakhi-image {
+
+        width: 220px;
+        height: 220px;
+    }
+
+    .golden-glow {
+
+        width: 210px;
+        height: 210px;
+    }
+
+    .rakhi-message {
+
+        padding: 25px 18px;
+    }
+
+    .rakhi-message h1 {
+
+        font-size: 30px;
+    }
+
+    .message-text {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+    .heart {
+
+        font-size: 22px;
+    }
+}
+/* =====================================================
+   PAGE 3 — MEMORIES
+===================================================== */
+
+.memories-page {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(255, 245, 250, 0.75),
+            rgba(255, 238, 225, 0.85)
+        ),
+        url("images/background3.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+
+    color: #633b4c;
+}
+
+
+/* Main container */
+
+.memories-container {
+
+    width: 92%;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding:
+        70px
+        0
+        100px;
+}
+
+
+/* Heading */
+
+.memory-small-title {
+
+    text-align: center;
+
+    color: #d81b60;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+
+.memories-title {
+
+    text-align: center;
+
+    color: #e91e63;
+
+    font-size: 44px;
+
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+}
+
+
+.memories-intro {
+
+    max-width: 650px;
+
+    margin:
+        0
+        auto
+        70px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #75485a;
+}
+
+
+/* =====================================================
+   MEMORY CARD
+===================================================== */
+
+.memory-card {
+
+    width: 90%;
+
+    max-width: 850px;
+
+    margin:
+        0
+        auto
+        70px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 45px;
+
+    padding: 25px;
+
+    background:
+        rgba(255,255,255,0.72);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 12px 35px rgba(180, 70, 110, 0.12);
+
+    border:
+        1px solid rgba(255,255,255,0.9);
+
+    opacity: 0;
+
+    animation:
+        memoryAppear 1s ease-out forwards;
+}
+
+
+/* Alternating cards */
+
+.memory-left {
+
+    transform:
+        translateX(-80px)
+        rotate(-1deg);
+}
+
+
+.memory-right {
+
+    flex-direction: row-reverse;
+
+    transform:
+        translateX(80px)
+        rotate(1deg);
+}
+
+
+/* =====================================================
+   PHOTO FRAME
+===================================================== */
+
+.photo-frame {
+
+    flex-shrink: 0;
+
+    width: 300px;
+
+    height: 300px;
+
+    padding: 10px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.12);
+
+    transform:
+        rotate(-3deg);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.memory-right .photo-frame {
+
+    transform:
+        rotate(3deg);
+}
+
+
+.photo-frame:hover {
+
+    transform:
+        rotate(0deg)
+        scale(1.06);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.2);
+
+    z-index: 5;
+}
+
+
+.photo-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =====================================================
+   MEMORY TEXT
+===================================================== */
+
+.memory-text {
+
+    flex: 1;
+}
+
+
+.memory-text span {
+
+    display: inline-block;
+
+    color: #ff69b4;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+
+.memory-text h2 {
+
+    color: #d81b60;
+
+    font-size: 27px;
+
+    margin-bottom: 15px;
+
+    line-height: 1.25;
+}
+
+
+.memory-text p {
+
+    color: #704656;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   MEMORY ANIMATION
+===================================================== */
+
+@keyframes memoryAppear {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            rotate(0);
+    }
+}
+
+
+/* =====================================================
+   FINAL BUTTON
+===================================================== */
+
+.final-button-area {
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    padding-top: 30px;
+}
+
+
+.final-button-area p {
+
+    font-size: 19px;
+
+    color: #75485a;
+
+    margin-bottom: 20px;
+}
+
+
+.final-surprise-button {
+
+    border: none;
+
+    padding:
+        17px
+        35px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1493,
+            #ff69b4
+        );
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(255,20,147,0.3);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.final-surprise-button:hover {
+
+    transform:
+        scale(1.08)
+        translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(255,20,147,0.4);
+}
+
+
+/* =====================================================
+   FLOATING DECORATION
+===================================================== */
+
+.memory-hearts {
+
+    position: fixed;
+
+    right: 30px;
+
+    top: 40%;
+
+    font-size: 35px;
+
+    opacity: 0.6;
+
+    animation:
+        memoryHeartFloat 3s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+@keyframes memoryHeartFloat {
+
+    0%,100% {
+
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-20px)
+            rotate(5deg);
+    }
+}
+
+
+
+
+@media (max-width: 750px) {
+
+    .memories-container {
+
+        padding-top: 45px;
+    }
+
+    .memories-title {
+
+        font-size: 32px;
+
+        padding: 0 10px;
+    }
+
+    .memories-intro {
+
+        font-size: 16px;
+
+        padding: 0 15px;
+
+        margin-bottom: 45px;
+    }
+
+    .memory-card,
+    .memory-right {
+
+        width: 95%;
+
+        flex-direction: column;
+
+        gap: 25px;
+
+        transform: translateY(50px);
+
+        margin-bottom: 45px;
+
+        text-align: center;
+    }
+
+    .photo-frame {
+
+        width: 260px;
+
+        height: 260px;
+    }
+
+    .memory-text h2 {
+
+        font-size: 24px;
+    }
+
+    .memory-text p {
+
+        font-size: 15px;
+    }
+
+    .memory-hearts {
+
+        display: none;
+    }
+}
+/* =====================================================
+   PAGE 4 — FINAL SURPRISE
+===================================================== */
+
+.final-page {
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff7fb 0%,
+            #ffe6f0 45%,
+            #ffd4e5 100%
+        );
+
+    overflow: hidden;
+
+    position: relative;
+
+    color: #633b4c;
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.final-glow {
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 182, 193, 0.45),
+            rgba(255, 255, 255, 0)
+        );
+
+    filter: blur(10px);
+
+    animation:
+        finalGlow 5s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+@keyframes finalGlow {
+
+    0%, 100% {
+
+        transform: scale(0.9);
+
+        opacity: 0.6;
+    }
+
+    50% {
+
+        transform: scale(1.2);
+
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.final-container {
+
+    width: 92%;
+
+    max-width: 750px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+
+    padding: 40px 0;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.final-intro {
+
+    animation:
+        finalIntro 1.2s ease-out both;
+}
+
+
+.final-intro p {
+
+    color: #c2185b;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.final-intro h1 {
+
+    color: #e91e63;
+
+    font-size: 38px;
+
+    margin-bottom: 35px;
+
+    text-shadow:
+        0 3px 10px rgba(255,255,255,0.9);
+}
+
+
+@keyframes finalIntro {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   FLOWER BUTTON
+===================================================== */
+
+.flower-button {
+
+    width: 230px;
+    height: 230px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    display: block;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.flower-button:hover {
+
+    transform:
+        scale(1.08);
+}
+
+
+/* =====================================================
+   FLOWER
+===================================================== */
+
+.flower {
+
+    width: 180px;
+    height: 180px;
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    animation:
+        flowerFloat 3s ease-in-out infinite;
+}
+
+
+/* Individual petals */
+
+.petal {
+
+    width: 72px;
+    height: 105px;
+
+    position: absolute;
+
+    left: 54px;
+    top: 38px;
+
+    border-radius:
+        50% 50% 45% 45%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff69b4,
+            #ff1493
+        );
+
+    box-shadow:
+        0 5px 15px rgba(255,20,147,0.2);
+
+    transform-origin:
+        50% 100%;
+}
+
+
+/* Six petals */
+
+.p1 {
+    transform: rotate(0deg) translateY(-30px);
+}
+
+.p2 {
+    transform: rotate(60deg) translateY(-30px);
+}
+
+.p3 {
+    transform: rotate(120deg) translateY(-30px);
+}
+
+.p4 {
+    transform: rotate(180deg) translateY(-30px);
+}
+
+.p5 {
+    transform: rotate(240deg) translateY(-30px);
+}
+
+.p6 {
+    transform: rotate(300deg) translateY(-30px);
+}
+
+
+/* Flower center */
+
+.flower-center {
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    left: 55px;
+    top: 55px;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffd54f,
+            #ffb300
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 5px 15px rgba(255,179,0,0.3);
+
+    z-index: 5;
+}
+
+
+/* Flower animation */
+
+@keyframes flowerFloat {
+
+    0%, 100% {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(-3deg);
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -60%)
+            rotate(3deg);
+    }
+}
+
+
+/* =====================================================
+   FLOWER OPEN EFFECT
+===================================================== */
+
+.flower-button.opened {
+
+    animation:
+        flowerOpen 1s ease forwards;
+}
+
+
+@keyframes flowerOpen {
+
+    0% {
+
+        transform: scale(1);
+    }
+
+    40% {
+
+        transform: scale(1.25);
+    }
+
+    100% {
+
+        transform: scale(0.8);
+
+        opacity: 0;
+    }
+}
+
+
+.flower-button.opened .petal {
+
+    animation:
+        petalBurst 1s ease forwards;
+}
+
+
+@keyframes petalBurst {
+
+    to {
+
+        opacity: 0;
+
+        transform:
+            rotate(180deg)
+            translateY(-180px)
+            scale(1.4);
+    }
+}
+
+
+/* =====================================================
+   FINAL MESSAGE
+===================================================== */
+
+.final-message {
+
+    max-width: 650px;
+
+    margin:
+        -10px
+        auto
+        0;
+
+    padding:
+        35px
+        30px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 15px 45px rgba(190,70,120,0.15);
+
+    opacity: 0;
+
+    transform:
+        translateY(50px)
+        scale(0.9);
+
+    pointer-events: none;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+/* Show final message */
+
+.final-message.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    pointer-events: auto;
+}
+
+
+/* Sparkle heading */
+
+.sparkle-title {
+
+    color: #d81b60;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+
+/* Final heading */
+
+.final-message h2 {
+
+    color: #e91e63;
+
+    font-size: 34px;
+
+    line-height: 1.3;
+
+    margin-bottom: 20px;
+}
+
+
+/* Final paragraphs */
+
+.final-message p {
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #704656;
+
+    margin-bottom: 14px;
+}
+
+
+/* Special line */
+
+.final-message .special-line {
+
+    color: #ff1493;
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    margin-top: 20px;
+}
+
+
+/* Divider */
+
+.divider {
+
+    color: #ff69b4;
+
+    letter-spacing: 8px;
+
+    margin:
+        20px
+        0;
+}
+
+
+/* Ending */
+
+.final-message .ending {
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    color: #d81b60;
+}
+
+
+/* From Varad */
+
+.final-message .from {
+
+    font-family:
+        cursive;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    color: #ff1493;
+
+    margin-top: 20px;
+}
+
+
+/* =====================================================
+   RESTART BUTTON
+===================================================== */
+
+.restart-button {
+
+    margin-top: 25px;
+
+    padding:
+        12px
+        25px;
+
+    border:
+        2px solid #ff69b4;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.6);
+
+    color: #d81b60;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        0.3s;
+}
+
+
+.restart-button.show {
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+.restart-button:hover {
+
+    background: #ff69b4;
+
+    color: white;
+
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   FLOATING PETALS
+===================================================== */
+
+.petals {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+
+.petals span {
+
+    position: absolute;
+
+    top: -50px;
+
+    font-size: 25px;
+
+    opacity: 0.7;
+
+    animation:
+        fallingPetal
+        8s
+        linear
+        infinite;
+}
+
+
+.petals span:nth-child(1) {
+
+    left: 8%;
+
+    animation-delay: 0s;
+}
+
+
+.petals span:nth-child(2) {
+
+    left: 20%;
+
+    animation-delay: 2s;
+}
+
+
+.petals span:nth-child(3) {
+
+    left: 35%;
+
+    animation-delay: 4s;
+}
+
+
+.petals span:nth-child(4) {
+
+    left: 50%;
+
+    animation-delay: 1s;
+}
+
+
+.petals span:nth-child(5) {
+
+    left: 65%;
+
+    animation-delay: 3s;
+}
+
+
+.petals span:nth-child(6) {
+
+    left: 78%;
+
+    animation-delay: 5s;
+}
+
+
+.petals span:nth-child(7) {
+
+    left: 88%;
+
+    animation-delay: 1.5s;
+}
+
+
+.petals span:nth-child(8) {
+
+    left: 95%;
+
+    animation-delay: 4.5s;
+}
+
+
+@keyframes fallingPetal {
+
+    0% {
+
+        transform:
+            translateY(-50px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+
+        opacity: 0.7;
+    }
+
+    50% {
+
+        transform:
+            translateY(50vh)
+            translateX(40px)
+            rotate(180deg);
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            translateX(-40px)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .final-intro h1 {
+
+        font-size: 30px;
+    }
+
+    .final-intro p {
+
+        font-size: 16px;
+    }
+
+    .flower-button {
+
+        width: 200px;
+        height: 200px;
+    }
+
+    .flower {
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.85);
+    }
+
+    .final-message {
+
+        padding:
+            28px
+            20px;
+    }
+
+    .final-message h2 {
+
+        font-size: 27px;
+    }
+
+    .final-message p {
+
+        font-size: 15px;
+    }
+
+    .final-message .from {
+
+        font-size: 27px;
+    }
+}
